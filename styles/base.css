@@ -1,0 +1,17 @@
+@import url('./variables.css');
+@import url('./typography.css');
+@import url('./reset.css');
+
+
+/* Tipografía y reglas globales mínimas */
+body {
+  font-family: var(--font-body);
+  color: var(--color-text);
+  background: var(--color-bg);
+  line-height: 1.5;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}

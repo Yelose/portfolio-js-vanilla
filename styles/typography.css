@@ -1,0 +1,146 @@
+/* ───────────────────────────────────────────────
+   typography.css
+   Author: Marina González (Yelose)
+   Description:
+   Global typographic rhythm based on variables.css
+   All sizes, weights and spacings derive from --base-font-size
+──────────────────────────────────────────────── */
+
+html {
+  font-size: var(--base-font-size);
+  font-family: var(--font-body);
+  line-height: 1.5;
+  color: var(--color-text);
+  background: var(--color-bg);
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  font-size: var(--fs-md);
+  font-family: var(--font-body);
+}
+
+/* ─────────────── Headings ─────────────── */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: var(--font-heading);
+  font-weight: 700;
+  line-height: 1.2;
+  color: var(--color-text);
+  margin-block: var(--space-md);
+}
+
+h1 {
+  font-size: var(--fs-xxxl);
+}
+h2 {
+  font-size: var(--fs-xxl);
+  font-weight: 200;
+}
+h3 {
+  font-size: var(--fs-xl);
+}
+h4 {
+  font-size: var(--fs-lg);
+}
+h5 {
+  font-size: var(--fs-md);
+  font-weight: 600;
+}
+h6 {
+  font-size: var(--fs-sm);
+  font-weight: 600;
+  color: var(--color-muted);
+}
+
+/* ─────────────── Text Elements ─────────────── */
+p {
+  font-size: var(--fs-md);
+  margin-block: var(--space-md);
+  color: var(--color-text);
+}
+
+small {
+  font-size: var(--fs-xs);
+  color: var(--color-muted);
+}
+
+strong {
+  font-weight: 600;
+  color: var(--color-text);
+}
+
+em {
+  font-style: italic;
+}
+
+/* ─────────────── Links ─────────────── */
+a {
+  color: var(--color-accent);
+  text-decoration: none;
+  transition: color var(--transition-fast);
+}
+
+a:hover,
+a:focus-visible {
+  color: var(--color-accent-hover);
+  text-decoration: underline;
+}
+
+/* ─────────────── Lists ─────────────── */
+ul,
+ol {
+  padding-inline-start: 1.5em;
+  margin-block: var(--space-md);
+}
+
+li {
+  margin-block: var(--space-xs);
+}
+
+/* ─────────────── Code & Preformatted ─────────────── */
+code,
+pre {
+  font-family: ui-monospace, SFMono-Regular, Consolas, "Liberation Mono",
+    monospace;
+  background: var(--color-surface);
+  color: var(--color-accent);
+  border-radius: var(--radius-sm);
+}
+
+code {
+  padding: 0.2em 0.4em;
+}
+
+pre {
+  padding: var(--space-md);
+  overflow-x: auto;
+}
+
+/* ─────────────── Quotes ─────────────── */
+blockquote {
+  margin-block: var(--space-md);
+  padding-inline: var(--space-md);
+  border-inline-start: 4px solid var(--color-border);
+  color: var(--color-muted);
+  font-style: italic;
+}
+
+/* ─────────────── Misc ─────────────── */
+hr {
+  border: none;
+  border-block-start: 1px solid var(--color-border);
+  margin-block: var(--space-lg);
+}
+
+mark {
+  background: hsl(var(--hue-accent) var(--saturation-accent) 90%);
+  color: var(--color-text);
+  padding-inline: 0.2em;
+  border-radius: var(--radius-sm);
+}

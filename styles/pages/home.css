@@ -1,0 +1,32 @@
+body {
+    height: 100dvh;
+    overflow-y: hidden;
+    flex-direction: column;
+}
+header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+body, header > div, main {
+    display: flex;
+}
+
+main, main>section {
+    flex: 1;
+}
+
+main {
+    align-items: center;
+}
+
+main> aside> menu {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+    justify-items: center;
+    align-items: center;
+    gap: 10px;
+}
+

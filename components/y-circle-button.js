@@ -1,38 +1,41 @@
 // components/y-circle-button.js
-class YCircleButton extends HTMLElement {
-    static get observedAttributes() { return ['label', 'href']; }
-  
-    constructor() {
-      super();
-      this._a = document.createElement('a');
-      // Estructura mínima, sin clases. Tú lo estilizas por selectores (y-circle-button > a, y-circle-button > a > span, etc.)
-      this._a.setAttribute('rel', 'bookmark');
-      // Icono por slot (opcional)
-      this._slot = document.createElement('slot');
-      this._labelEl = document.createElement('span'); // visible; puedes ocultarlo en CSS si usas solo icono
-  
-      this._a.append(this._slot, this._labelEl);
-    }
-  
-    connectedCallback() {
-      this.render();
-      if (!this.contains(this._a)) this.append(this._a);
-      // Accesibilidad de teclado: Space activa el enlace (Enter ya funciona nativo)
-      this._a.addEventListener('keydown', (e) => {
-        if (e.code === 'Space') { e.preventDefault(); this._a.click(); }
-      });
-    }
-  
-    attributeChangedCallback() { this.render(); }
-  
-    render() {
-      const label = this.getAttribute('label') ?? '';
-      const href  = this.getAttribute('href')  ?? '#';
-      this._a.setAttribute('href', href);
-      this._a.setAttribute('aria-label', label);
-      this._labelEl.textContent = label;
-    }
+
+// Load the component stylesheet once
+(function ensureYCircleButtonStyles() {
+  if (!document.querySelector('link[data-y-circle-button]')) {
+    const link = document.createElement('link');
+    link.rel = 'stylesheet';
+    link.href = '/styles/components/y-circle-button.css'; // adjust path if needed
+    link.dataset.yCircleButton = 'true';
+    document.head.append(link);
   }
-  
-  customElements.define('y-circle-button', YCircleButton);
-  
+})();
+
+class YCircleButton extends HTMLElement {
+  static get observedAttributes() { return ['label', 'href']; }
+
+  constructor() {
+    super();
+    this._a = document.createElement('a');
+    this._slot = document.createElement('slot');
+    this._labelEl = document.createElement('span');
+    this._labelEl.className = 'label';
+
+    this._a.append(this._slot, this._labelEl);
+    this.append(this._a);
+  }
+
+  connectedCallback() { this._render(); }
+
+  attributeChangedCallback() { this._render(); }
+
+  _render() {
+    const label = this.getAttribute('label') ?? '';
+    const href  = this.getAttribute('href')  ?? '#';
+    this._a.setAttribute('href', href);
+    this._a.setAttribute('aria-label', label);
+    this._labelEl.textContent = label; // visible fallback text
+  }
+}
+
+customElements.define('y-circle-button', YCircleButton);

@@ -46,11 +46,11 @@
     <meta name="twitter:url" content="https://yelose.dev/" />
     <meta
       name="twitter:title"
-      content="Marina González — Frontend Developer | Yelose Portfolio"
+      content="Marina González Suárez — Frontend Developer | Yelose Portfolio"
     />
     <meta
       name="twitter:description"
-      content="Explore Marina González’s web projects, tutorials, and skills — modern frontend development with HTML, CSS, and JavaScript."
+      content="Explore Marina González Suárez’s web projects, tutorials, and skills — modern frontend development with HTML, CSS, and JavaScript."
     />
     <meta
       name="twitter:image"
@@ -59,8 +59,6 @@
 
     <!-- 🧩 Styles -->
     <link rel="stylesheet" href="/styles/base.css" />
-    <link rel="stylesheet" href="/styles/layout.css" />
-    <link rel="stylesheet" href="/styles/components.css" />
     <link rel="stylesheet" href="/styles/pages/home.css" />
 
     <!-- ⚙️ Scripts -->
@@ -81,15 +79,42 @@
         ]
       }
     </script>
+    <script type="module" src="/components/y-inline-svg.js"></script>
   </head>
   <body>
     <header>
-      <hgroup></hgroup>
-      <address></address>
+        <div>
+            <figure>
+                <img src="/img/yo-peq-alfa 1.png" alt="Marina en dibujo">
+            </figure>
+            <hgroup>
+              <h1>Hi, I'm Marina</h1>
+              <h2>Software Engineer</h2>
+            </hgroup>
+        </div>
+      <address>
+        <p>
+            <a href="tel:+34656614888">656 614 888</a>
+        </p>
+        <i>
+            <a href="mailto:yelose85@gmail.com?subject=Portfolio%20Inquiry&body=Hello%20Marina,">
+            marina@yelose.dev
+          </a>
+        </i>
+          
+      </address>
     </header>
     <main>
       <section>
-        <figure></figure>
+        <figure>
+            <y-inline-svg
+                src="/img/undraw_proud-coder_bivp.svg"
+                aria-label="Marina is a praud developer"
+                title="Praud developer"
+                desc="A drawing of a proud developer"
+                lazy>
+            </y-inline-svg>
+        </figure>
       </section>
       <aside>
         <menu>

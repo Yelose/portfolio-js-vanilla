@@ -1,0 +1,97 @@
+/* ───────────────────────────────────────────────
+   variables.css
+   Author: Marina González (Yelose)
+   Philosophy: relational design system
+──────────────────────────────────────────────── */
+
+:root {
+  /* 🎚 Base sizing system */
+  --base-font-size: clamp(12px, 1.5vw, 18px);
+  --scale-xs: 0.75;
+  --scale-sm: 0.875;
+  --scale-md: 1;
+  --scale-lg: 1.25;
+  --scale-xl: 1.5;
+  --scale-xxl: 2;
+  --scale-xxxl: 3;
+
+  /* Typography */
+  --font-body: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+  --font-heading: var(--font-body);
+
+  /* Derived font sizes (proportional to base) */
+  --fs-xs: calc(var(--base-font-size) * var(--scale-xs));
+  --fs-sm: calc(var(--base-font-size) * var(--scale-sm));
+  --fs-md: calc(var(--base-font-size) * var(--scale-md));
+  --fs-lg: calc(var(--base-font-size) * var(--scale-lg));
+  --fs-xl: calc(var(--base-font-size) * var(--scale-xl));
+  --fs-xxl: calc(var(--base-font-size) * var(--scale-xxl));
+  --fs-xxxl: calc(var(--base-font-size) * var(--scale-xxxl));
+
+  /* 📏 Spacing scale (proportional) */
+  --space-unit: 1rem;
+  --space-xs: calc(var(--space-unit) * 0.25);
+  --space-sm: calc(var(--space-unit) * 0.5);
+  --space-md: calc(var(--space-unit) * 1);
+  --space-lg: calc(var(--space-unit) * 2);
+  --space-xl: calc(var(--space-unit) * 4);
+
+  /* 🎨 Color system (HSL-based for easy manipulation) */
+
+/* 🎨 Color system (HSL-based for easy manipulation) */
+--hue-base: 277;
+--sat-base: 90%;
+--light-base: 50%;
+
+/* Hues */
+--hue-primary:   var(--hue-base);
+--hue-secondary: calc(var(--hue-base) - 30);
+--hue-tertiary:  calc(var(--hue-base) + 140);
+
+/* Saturations (independent) */
+--sat-primary:   var(--sat-base);
+--sat-secondary: calc(var(--sat-base) * 0.9);
+--sat-tertiary:  calc(var(--sat-base) * 0.5);
+
+/* Lightness (independent) */
+--light-primary:         var(--light-base);
+--light-primary-hover:   calc(var(--light-primary) * 0.9);
+
+--light-secondary:       86%;
+--light-secondary-hover: calc(var(--light-secondary) * 0.9);
+
+--light-tertiary:        80%;
+--light-tertiary-hover:  calc(var(--light-tertiary) * 0.8);
+
+/* Final colors */
+--color-primary:         hsl(var(--hue-primary) var(--sat-primary) var(--light-primary));
+--color-primary-hover:   hsl(var(--hue-primary) var(--sat-primary) var(--light-primary-hover));
+
+--color-secondary:       hsl(var(--hue-secondary) var(--sat-secondary) var(--light-secondary));
+--color-secondary-hover: hsl(var(--hue-secondary) var(--sat-secondary) var(--light-secondary-hover));
+
+--color-tertiary:        hsl(var(--hue-tertiary) var(--sat-tertiary) var(--light-tertiary));
+--color-tertiary-hover:  hsl(var(--hue-tertiary) var(--sat-tertiary) var(--light-tertiary-hover));
+
+/* Neutros */
+--color-bg:      hsl(0 0% 100%);
+--color-surface: hsl(0 0% 98%);
+--color-text:    hsl(0 0% 10%);
+--color-muted:   hsl(0 0% 45%);
+--color-border:  hsl(0 0% 85%);
+
+  /* 🧱 Radio (proportional) */
+  --radius-base: 0.5rem;
+  --radius-sm: calc(var(--radius-base) * 0.5);
+  --radius-md: calc(var(--radius-base) * 1);
+  --radius-lg: calc(var(--radius-base) * 2);
+  --radius-round: 50%;
+
+  /* ☁️ Shadows (HSL-aware depth scale) */
+
+   --box-shadow-base: 1px 2px 4px 10px gray;
+  /* 🕒 Transitions */
+  --transition-fast: 150ms ease;
+  --transition-normal: 300ms ease;
+  --transition-slow: 600ms ease;
+}
